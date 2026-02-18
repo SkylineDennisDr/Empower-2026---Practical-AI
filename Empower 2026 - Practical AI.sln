@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36705.20 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empower 2026 - Practical AI", "Empower 2026 - Practical AI\Empower 2026 - Practical AI.csproj", "{9BAA17D0-4F89-4161-A610-32D47D01FCF7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{047416B4-9B17-ACA1-F102-5E8D9DFD21EF} = {047416B4-9B17-ACA1-F102-5E8D9DFD21EF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Analysis", "Code Analysis", "{CFD59DC3-20B7-4C2A-80A1-8B9C5B27AD42}"
+	ProjectSection(SolutionItems) = preProject
+		Internal\Code Analysis\qaction-debug.ruleset = Internal\Code Analysis\qaction-debug.ruleset
+		Internal\Code Analysis\qaction-release.ruleset = Internal\Code Analysis\qaction-release.ruleset
+		Internal\Code Analysis\stylecop.json = Internal\Code Analysis\stylecop.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AI - Commtia DAB", "AI - Commtia DAB\AI - Commtia DAB.csproj", "{047416B4-9B17-ACA1-F102-5E8D9DFD21EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BAA17D0-4F89-4161-A610-32D47D01FCF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BAA17D0-4F89-4161-A610-32D47D01FCF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BAA17D0-4F89-4161-A610-32D47D01FCF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BAA17D0-4F89-4161-A610-32D47D01FCF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{047416B4-9B17-ACA1-F102-5E8D9DFD21EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{047416B4-9B17-ACA1-F102-5E8D9DFD21EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{047416B4-9B17-ACA1-F102-5E8D9DFD21EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{047416B4-9B17-ACA1-F102-5E8D9DFD21EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CFD59DC3-20B7-4C2A-80A1-8B9C5B27AD42} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {035130E5-9807-46BA-AC0D-8B3D95510BD7}
+	EndGlobalSection
+EndGlobal
