@@ -1,5 +1,6 @@
 using System;
 using Elements;
+using Protocols;
 using Skyline.AppInstaller;
 using Skyline.DataMiner.Automation;
 using Skyline.DataMiner.Net.AppPackages;
@@ -25,6 +26,9 @@ internal class Script
             installer.InstallDefaultContent();
 
 			string setupContentPath = installer.GetSetupContentDirectory();
+
+			var protocolInstaller = new ProtocolInstaller(Engine.SLNetRaw, context, setupContentPath, engine.GenerateInformation);
+			protocolInstaller.InstallDefaultContent();
 
 			var elementInstaller = new ElementInstaller(engine);
 			elementInstaller.InstallDefaultContent();
