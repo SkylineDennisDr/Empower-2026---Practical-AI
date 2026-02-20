@@ -23,7 +23,7 @@
 
 		public void InstallDefaultContent()
 		{
-			int viewID = CreateViews(new string[] { "Empower 2026", "Relational Anomaly Detection Demo"});
+			int viewID = CreateViews(new string[] { "DataMiner Catalog", "Empower 2026", "Relational Anomaly Detection Demo"});
 			CreateElement($"RAD - Commtia LON 1", "AI - Commtia DAB", "1.0.0.1", viewID, "TrendTemplate_PA_Demo", "AlarmTemplate_PA_Demo");
 			Thread.Sleep(5000);
 			CreateElement($"RAD - Commtia LON 2", "AI - Commtia DAB", "1.0.0.1", viewID, "TrendTemplate_PA_Demo", "AlarmTemplate_PA_Demo");
