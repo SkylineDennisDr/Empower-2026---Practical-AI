@@ -1,6 +1,6 @@
 # Empower 2026 - Practical AI
 
-This package deploys several elements used throughout the *Practical AI for operational monitoring* session at Empower 2026. During this session, the Relational Anomaly Detection feature is demonstrated using the deployed elements.
+This package deploys several elements used throughout the *Practical AI workflows* session at Empower 2026. During this session, the Relational Anomaly Detection feature is demonstrated using the deployed elements.
 
 ![Elements in DataMiner Cube showcasing Relational Anomaly Detection](./Images/Screenshot.png)
 
