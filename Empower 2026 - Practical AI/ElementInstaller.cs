@@ -8,6 +8,7 @@
 	using Skyline.DataMiner.Automation;
 	using Skyline.DataMiner.Core.DataMinerSystem.Automation;
 	using Skyline.DataMiner.Core.DataMinerSystem.Common;
+	using Skyline.DataMiner.Net;
 	using Skyline.DataMiner.Net.Messages;
 	using Skyline.DataMiner.Net.Messages.Advanced;
 
@@ -22,8 +23,17 @@
 
 		public void InstallDefaultContent()
 		{
-			int viewID = CreateViews(new string[] { "DataMiner Catalog", "Empower2026"});
-			CreateElement($"RAD - Commtia LON 1", "AI - Commtia DAB", "1.0.0.1-fast", viewID, "TrendTemplate_PA_Demo", "AlarmTemplate_PA_Demo");
+			int viewID = CreateViews(new string[] { "Empower 2026", "Relational Anomaly Detection Demo"});
+			CreateElement($"RAD - Commtia LON 1", "AI - Commtia DAB", "1.0.0.1", viewID, "TrendTemplate_PA_Demo", "AlarmTemplate_PA_Demo");
+			Thread.Sleep(5000);
+			CreateElement($"RAD - Commtia LON 2", "AI - Commtia DAB", "1.0.0.1", viewID, "TrendTemplate_PA_Demo", "AlarmTemplate_PA_Demo");
+			Thread.Sleep(5000);
+			CreateElement($"RAD - Commtia LON 3", "AI - Commtia DAB", "1.0.0.1", viewID, "TrendTemplate_PA_Demo", "AlarmTemplate_PA_Demo");
+			Thread.Sleep(5000);
+			CreateElement($"RAD - Commtia LON 4", "AI - Commtia DAB", "1.0.0.1", viewID, "TrendTemplate_PA_Demo", "AlarmTemplate_PA_Demo");
+			Thread.Sleep(5000);
+			CreateElement($"RAD - Commtia LON 5", "AI - Commtia DAB", "1.0.0.1", viewID, "TrendTemplate_PA_Demo", "AlarmTemplate_PA_Demo");
+			Thread.Sleep(5000);
 		}
 
 		private void AssignVisioToView(int viewID, string visioFileName)
