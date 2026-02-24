@@ -1,11 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36705.20 d17.14
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11513.90 insiders
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empower 2026 - Practical AI", "Empower 2026 - Practical AI\Empower 2026 - Practical AI.csproj", "{9BAA17D0-4F89-4161-A610-32D47D01FCF7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{047416B4-9B17-ACA1-F102-5E8D9DFD21EF} = {047416B4-9B17-ACA1-F102-5E8D9DFD21EF}
+		{8D01E5B0-FC8D-5333-D5DE-E9F3B40D28D1} = {8D01E5B0-FC8D-5333-D5DE-E9F3B40D28D1}
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
@@ -18,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Analysis", "Code Analy
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AI - Commtia DAB", "AI - Commtia DAB\AI - Commtia DAB.csproj", "{047416B4-9B17-ACA1-F102-5E8D9DFD21EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLC_TextAnalysis_Prompt", "SLC_TextAnalysis_Prompt\SLC_TextAnalysis_Prompt.csproj", "{8D01E5B0-FC8D-5333-D5DE-E9F3B40D28D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +36,10 @@ Global
 		{047416B4-9B17-ACA1-F102-5E8D9DFD21EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{047416B4-9B17-ACA1-F102-5E8D9DFD21EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{047416B4-9B17-ACA1-F102-5E8D9DFD21EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D01E5B0-FC8D-5333-D5DE-E9F3B40D28D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D01E5B0-FC8D-5333-D5DE-E9F3B40D28D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D01E5B0-FC8D-5333-D5DE-E9F3B40D28D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D01E5B0-FC8D-5333-D5DE-E9F3B40D28D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

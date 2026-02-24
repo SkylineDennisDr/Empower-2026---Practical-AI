@@ -1,22 +1,8 @@
 <CatalogReferences xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.skyline.be/catalogReferences">
-<!--
-	<CatalogReference id="guid">
-		<Name>Example Catalog Item (Specific Version)</Name>
+<CatalogReference id="cb4988f9-f3e5-45b7-aade-144f21e9755a">
+		<Name>Processing PDF documents using AI</Name>
 		<Selection>
-			<Specific>1.0.0.1</Specific>
+			<Specific>2.0.2</Specific>
 		</Selection>
 	</CatalogReference>
-	<CatalogReference id="guid">
-		<Name>Example Catalog Item (Range)</Name>
-		<Selection>
-			<Range>1.0.0</Range>
-		</Selection>
-	</CatalogReference>
-	<CatalogReference id="guid">
-		<Name>Example Catalog Item (Range - Prerelease)</Name>
-		<Selection>
-			<Range allowPrerelease="true">1.0.0</Range>
-		</Selection>
-	</CatalogReference>
--->
 </CatalogReferences>
