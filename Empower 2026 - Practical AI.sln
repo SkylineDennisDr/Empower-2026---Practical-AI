@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 18
-VisualStudioVersion = 18.4.11513.90 insiders
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empower 2026 - Practical AI", "Empower 2026 - Practical AI\Empower 2026 - Practical AI.csproj", "{9BAA17D0-4F89-4161-A610-32D47D01FCF7}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -22,6 +22,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AI - Commtia DAB", "AI - Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLC_TextAnalysis_Prompt", "SLC_TextAnalysis_Prompt\SLC_TextAnalysis_Prompt.csproj", "{8D01E5B0-FC8D-5333-D5DE-E9F3B40D28D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add Single Groups", "Add Single Groups\Add Single Groups.csproj", "{A1888CC8-3237-9692-0C4F-8B89EEEA6054}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add Shared Model Group", "Add Shared Model Group\Add Shared Model Group.csproj", "{BB47B715-9658-F945-9C03-516082C9C204}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +44,14 @@ Global
 		{8D01E5B0-FC8D-5333-D5DE-E9F3B40D28D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D01E5B0-FC8D-5333-D5DE-E9F3B40D28D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D01E5B0-FC8D-5333-D5DE-E9F3B40D28D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1888CC8-3237-9692-0C4F-8B89EEEA6054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1888CC8-3237-9692-0C4F-8B89EEEA6054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1888CC8-3237-9692-0C4F-8B89EEEA6054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1888CC8-3237-9692-0C4F-8B89EEEA6054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB47B715-9658-F945-9C03-516082C9C204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB47B715-9658-F945-9C03-516082C9C204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB47B715-9658-F945-9C03-516082C9C204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB47B715-9658-F945-9C03-516082C9C204}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
