@@ -63,9 +63,6 @@ owners:
   - name: 'DDR'
     email: 
     url:
-  - name: 'VLD'
-    email: 
-    url:
 
 # [Optional]
 # Tags that allow you to categorize your Catalog items.
@@ -76,7 +73,7 @@ owners:
 tags:
   - Empower
   - AI
-  -  Relational Anomaly Detection
+  - Relational Anomaly Detection
   - Document Intelligence
 
 
