@@ -1,6 +1,8 @@
 # Empower 2026 - Practical AI Workflows
 
-This package deploys several elements used throughout the *Practical AI workflows* session at Empower 2026. During this session, the Relational Anomaly Detection feature is demonstrated using the deployed elements.
+This package deploys several elements and scripts used throughout the *Practical AI workflows* session at Empower 2026.
+
+During this session, both the **Relational Anomaly Detection** and **Document Intelligence** demos are showcased using the deployed elements and supporting automation scripts.
 
 ![Elements in DataMiner Cube showcasing Relational Anomaly Detection](./Images/Screenshot.png)
 
