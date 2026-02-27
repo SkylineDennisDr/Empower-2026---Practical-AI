@@ -14,15 +14,6 @@ namespace ConfigureLondonDABSharedModelGroup
 	public class Script
 	{
 
-		//For a shared model groups, we have multiple similar setups: e.g. 100 different dab transmitters = 100 similar setups.
-		// Each setup is called a "subgroup" and looks similar: so a parameter in one subgroup has a natural counterpart to a parameter in every other subgroup.
-		// These parameters do not need to have the same name in DataMiner: e.g. you may be monitoring a linux and a windows server and the cpu usage parameter may be called differently on both systems: e.g. total processor load vs. cpu usage.
-		// We will assign a nice name to each global group parameter.
-		public const string TOTALOUTPUTPOWER = "Tx Amplifier Output Power";
-		public const string OUTPUTPOWERPA1 = "PA1 Output Power";
-		public const string OUTPUTPOWERPA2 = "PA2 Output Power";
-		public const string OUTPUTPOWERPA3 = "PA3 Output Power";
-
 		/// <summary>
 		/// The script entry point.
 		/// </summary>
@@ -62,35 +53,46 @@ namespace ConfigureLondonDABSharedModelGroup
 
 		private void RunSafe(IEngine engine)
 		{
-			// Resolve the DataMiner System (DMS) API handle from the Automation engine.
 			var dms = engine.GetDms();
+			var groupName = "DAB Fleet";
+			var subgroupInfos = new List<RADSubgroupInfo>(); //Create a list holding all subgroups
 
 			// Build the list of "subgroups" for the shared model group:
 			// - One subgroup per matching element (name starts with "RAD - Commtia LON ").
 			// - Each subgroup maps a set of element parameters (ParameterKey) to a shared, user-friendly group parameter name.
 			//   This is what makes different elements comparable in the same RAD model, even if their internal naming differs.
-			var subgroupInfos = dms.GetElements()
-				.Where(e => e.Name.StartsWith("RAD - Commtia LON "))
-				.Select(e => new RADSubgroupInfo(e.Name, new List<RADParameter>()
-				{
-					// Per-PA output powers (parameter 2243, indexed by "PA1/PA2/PA3").
-					new RADParameter(new ParameterKey(e.DmsElementId.AgentId, e.DmsElementId.ElementId, 2243, "PA1"), OUTPUTPOWERPA1),
-					new RADParameter(new ParameterKey(e.DmsElementId.AgentId, e.DmsElementId.ElementId, 2243, "PA2"), OUTPUTPOWERPA2),
-					new RADParameter(new ParameterKey(e.DmsElementId.AgentId, e.DmsElementId.ElementId, 2243, "PA3"), OUTPUTPOWERPA3),
+			var elements = dms.GetElements().Where(e => e.Name.StartsWith("RAD - Commtia LON")).ToList();
+			foreach (var element in elements)
+			{
+				// Step 1: Discover + fetch raw parameters
+				var pa1 = new ParameterKey(element.DmsElementId.AgentId, element.DmsElementId.ElementId, 2243, "PA1");
+				var pa2 = new ParameterKey(element.DmsElementId.AgentId, element.DmsElementId.ElementId, 2243, "PA2");
+				var pa3 = new ParameterKey(element.DmsElementId.AgentId, element.DmsElementId.ElementId, 2243, "PA3");
+				var totalOutputPower = new ParameterKey(element.DmsElementId.AgentId, element.DmsElementId.ElementId, 1022, "");
 
-					// Total transmitter output power (parameter 1022).
-					new RADParameter(new ParameterKey(e.DmsElementId.AgentId, e.DmsElementId.ElementId, 1022), TOTALOUTPUTPOWER),
-				}))
-				.ToList();
+				//Step 2: Create RAD Parameters (assign names to parameterKeys)
+				var radPA1 = new RADParameter(pa1, "Amplifier 1");
+				var radPA2 = new RADParameter(pa2, "Amplifier 2");
+				var radPA3 = new RADParameter(pa3, "Amplifier 3");
+				var radTotalOutputPower = new RADParameter(totalOutputPower, "Total Output Power");
 
+				//Step 3: Create subgroup info (name and RAD parameters)
+				var parameterList = new List<RADParameter> { radPA1, radPA2, radPA3, radTotalOutputPower };
+				var subgroupInfo = new RADSubgroupInfo(element.Name, parameterList);
+
+				//Step 4: Add subgroup info to the list of subgroup infos
+				subgroupInfos.Add(subgroupInfo);
+			}
+
+			//Step 5: 
 			// Create the RAD group:
 			// - "DAB Fleet" is the group name as it will appear in RAD.
 			// - subgroupInfos defines which elements participate and how their parameters map into the shared model.
 			// - The final boolean controls whether the model should update with new incoming data (true) or only upon manual retraining (false).
-			var groupInfo = new RADGroupInfo("DAB Fleet", subgroupInfos, false);
+			var groupInfo = new RADGroupInfo(groupName, subgroupInfos, false);
+			var request = new AddRADParameterGroupMessage(groupInfo);
 
 			// Send a request to add the RAD parameter group configuration in DataMiner.
-			var request = new AddRADParameterGroupMessage(groupInfo);
 			engine.SendSLNetMessage(request);
 		}
 	}

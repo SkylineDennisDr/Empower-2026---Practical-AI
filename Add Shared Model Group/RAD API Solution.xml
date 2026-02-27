@@ -5,7 +5,7 @@
 	<Type>Automation</Type>
 	<Author>DDR</Author>
 	<CheckSets>FALSE</CheckSets>
-	<Folder>DataMiner Catalog\RAD Demonstrator</Folder>
+	<Folder>DataMiner Catalog\Empower 2026\AI</Folder>
 
 	<Protocols>
 	</Protocols>
@@ -18,7 +18,7 @@
 
 	<Script>
 		<Exe id="1" type="csharp">
-			<Value><![CDATA[[Project:Add Shared Model Group]]]></Value>
+			<Value><![CDATA[[Project:RAD API Solution]]]></Value>
 			<!--<Param type="debug">true</Param>-->
 			<Message></Message>
 		</Exe>
