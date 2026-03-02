@@ -71,10 +71,10 @@ namespace ConfigureLondonDABSharedModelGroup
 				var totalOutputPower = new ParameterKey(element.DmsElementId.AgentId, element.DmsElementId.ElementId, 1022, "");
 
 				//Step 2: Create RAD Parameters (assign names to parameterKeys)
-				var radPA1 = new RADParameter(pa1, "Amplifier 1");
-				var radPA2 = new RADParameter(pa2, "Amplifier 2");
-				var radPA3 = new RADParameter(pa3, "Amplifier 3");
-				var radTotalOutputPower = new RADParameter(totalOutputPower, "Total Output Power");
+				var radPA1 = new RADParameter(pa1, "PA1 Output Power");
+				var radPA2 = new RADParameter(pa2, "PA2 Output Power");
+				var radPA3 = new RADParameter(pa3, "PA3 Output Power");
+				var radTotalOutputPower = new RADParameter(totalOutputPower, "Total TX Amplifier Output Power");
 
 				//Step 3: Create subgroup info (name and RAD parameters)
 				var parameterList = new List<RADParameter> { radPA1, radPA2, radPA3, radTotalOutputPower };
