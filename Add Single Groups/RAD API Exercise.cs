@@ -53,16 +53,9 @@ namespace ConfigureLondonDABs
 		private void RunSafe(IEngine engine)
 		{
 			var dms = engine.GetDms();
+			var elements = dms.GetElements().Where(e => e.Name.StartsWith("todo: add filter")).ToList();
+			//var subgroupInfos = new List<RADSubgroupInfo>(); //to be uncommented later
 
-			var groupName = "Todo: choose group name";
-
-			var subgroupInfos = new List<RADSubgroupInfo>(); //Create a list holding all subgroups
-
-			// Build the list of "subgroups" for the shared model group:
-			// - One subgroup per matching element (name starts with "RAD - Commtia LON ").
-			// - Each subgroup maps a set of element parameters (ParameterKey) to a shared, user-friendly group parameter name.
-			//   This is what makes different elements comparable in the same RAD model, even if their internal naming differs.
-			var elements = dms.GetElements().Where(e => e.Name.StartsWith("Todo: add filter")).ToList();
 			foreach (var element in elements)
 			{
 				// Step 1: Discover + fetch raw parameters
@@ -75,28 +68,22 @@ namespace ConfigureLondonDABs
 				var radPA1 = new RADParameter(pa1, "Todo: choose a name for parameter 1");
 				var radPA2 = new RADParameter(pa2, "Todo: choose a name for parameter 2");
 				var radPA3 = new RADParameter(pa3, "Todo: choose a name for parameter 3");
-				var radTotalOutputPower = new RADParameter(totalOutputPower, "Todo: choose name for parameter 4");
+				var radTotalOutputPower = new RADParameter(totalOutputPower, "Todo: choose a name for parameter 4");
 
 				//Step 3: Create subgroup info (name and RAD parameters)
-				var parameterList = new List<RADParameter> { radPA1, radPA2, radPA3, radTotalOutputPower };
-				var subgroupInfo = new RADSubgroupInfo("Todo: choose a subgroup name", parameterList);
+				//var parameterList = new List<RADParameter> { radPA1, radPA2, radPA3, radTotalOutputPower };
+				//var subgroupInfo = new RADSubgroupInfo(/*Todo: choose a subgroup name*/, /*Todo: add parameterList here*/);
 
 				//Step 4: Add subgroup info to the list of subgroup infos
-				subgroupInfos.Add(subgroupInfo);
+				//subgroupInfos.Add(subgroupInfo); //Todo, uncomment: add the subgroup info to the list of subgroup infos
 			}
-
 			//Step 5: 
-			// Create the RAD group:
-			// - give the group a name as it will appear in RAD.
-			// - subgroupInfos defines which elements participate and how their parameters map into the shared model.
-			bool adaptModelToNewData = false; //controls whether the model should update with new incoming data (true) or only upon manual retraining (false).
-
-			 // Todo: Configure the group behavior (double anomalyThreshold, int minimumAnomalyDuration) so that an anomaly will be reported when the anomaly score is higher than 3 and if it persists for at least 5 minutes.  
-			var groupInfo = new RADGroupInfo(groupName, subgroupInfos, adaptModelToNewData /* Todo: , anomalyThreshold, minimumAnomalyDuration*/);
-			var request = new AddRADParameterGroupMessage(groupInfo);
+			bool adaptModelToNewData = false;
+			//var groupInfo = new RADGroupInfo("Todo: choose group name", subgroupInfos, adaptModelToNewData,/*todo: anomalyThreshold, minimumAnomalyDuration*/);
+			//var request = new AddRADParameterGroupMessage(groupInfo);
 
 			// Send a request to add the RAD parameter group configuration in DataMiner.
-			engine.SendSLNetMessage(request);
+			//engine.SendSLNetMessage(request);
 		}
 	}
 }
